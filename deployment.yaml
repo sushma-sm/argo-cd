@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: sushmamounika/my-repo-sm:latest  # <- This will be updated by Harness
+        image: sushmamounika/my-repo-sm:3
         ports:
         - containerPort: 80
         volumeMounts:
