@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx-app
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: sushmamounika/my-repo-sm:latest  # <- This will be updated by Harness
         ports:
         - containerPort: 80
         volumeMounts:
@@ -26,7 +26,6 @@ spec:
       - name: html-volume
         configMap:
           name: nginx-html
-
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -56,10 +55,9 @@ data:
     </head>
     <body>
         <h1>Hello, ArgoCD is successfully deployed on GKE!</h1>
-        <p>This is a test webpage served from an LoadBalancer.</p>
+        <p>This is a test webpage served from a LoadBalancer.</p>
     </body>
     </html>
-
 ---
 apiVersion: v1
 kind: Service
