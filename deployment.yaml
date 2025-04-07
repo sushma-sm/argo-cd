@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: sushmamounika/my-repo-sm:3
+        image: sushmamounika/my-repo-sm:4
         ports:
         - containerPort: 80
         volumeMounts:
